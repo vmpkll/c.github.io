@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Cookie练习</title>
+		<meta charset="gb2312">
+		<script>
+			function setCookie(name,value,exireday){
+				var exp = new Date();
+				exp.setTime(exp.getTime()+expireday*24*60*60*1000);
+				document.cookie=name +"="+escape(value)+";expires"+"="+exp.toGMTString();
+			}
+			
+			
+			function getCookie(name){
+				var cookieStr =document.cookie;
+				if(cookieStr.length>0){
+					var cookieArr=cookieStr.split(";");
+					for(var i=0; i<cookieArr.length;i++){
+						var i=0; i<cookieArr[i].split("=");
+						if(cookieVal[0]==name){
+							rerurn unescape(cookieVal[1]);	
+						}	
+					}	
+				}		
+			}
+		</script>
+	</head>
+
+	<body>
+		<h3>信息安全一班0129</h3>
+		<script>
+		     clearAllCookie();
+			 setCookie("username","曹文鹏"，1);
+			 
+			 var s=getCookie("username");
+			 document.write(s);
+		</script>
+	</body>
+
+</html>
